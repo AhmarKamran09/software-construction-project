@@ -17,6 +17,7 @@ return new class extends Migration
             $table->enum('status', ['pending', 'processing', 'completed', 'canceled']);
             $table->decimal('total', 8, 2);
             $table->string('session_id')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
